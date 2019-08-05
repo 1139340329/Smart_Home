@@ -1,7 +1,8 @@
-package com.itqf.service;
+package com.itqf.service.impl;
 
 import com.itqf.mapper.TablelampMapper;
 import com.itqf.pojo.Tablelamp;
+import com.itqf.service.TablelampService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -29,7 +30,7 @@ public class TablelampServiceImpl implements TablelampService {
 
         List<Tablelamp> findall = tablelampMapper.findall();
 
-        List list = new ArrayList();
+        List  list = new ArrayList();
 
         for (Tablelamp tablelamp : findall) {
             Map map = new HashMap();

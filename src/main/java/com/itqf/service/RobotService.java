@@ -2,7 +2,12 @@ package com.itqf.service;
 
 import com.itqf.pojo.Robot;
 
+import java.util.List;
+
 public interface RobotService {
+
+
+    List<Robot> findAl();
 
     int deleteByPrimaryKey(Integer robotid);
 

@@ -23,6 +23,12 @@
     pmid, imgurl, pm25, filterer, temperature, humidity, outdoorpm25, residualofe, comfortlevel, 
     location, runconstant, airpq, function, state, electricity, hour
   </sql>
+
+  <select id="findAl" resultMap="BaseResultMap">
+    select *  from pm25
+  </select>
+
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

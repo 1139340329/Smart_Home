@@ -7,6 +7,28 @@ public class Robot {
 
     private String status;
 
+    private Integer electricity;
+
+    private Integer hour;
+
+    public Integer getElectricity() {
+        return electricity;
+    }
+
+    public void setElectricity(Integer electricity) {
+        this.electricity = electricity;
+    }
+
+    public Integer getHour() {
+        return hour;
+    }
+
+    public void setHour(Integer hour) {
+        this.hour = hour;
+    }
+
+
+
     public Integer getRobotid() {
         return robotid;
     }

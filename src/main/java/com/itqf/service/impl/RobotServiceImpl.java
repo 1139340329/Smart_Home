@@ -1,10 +1,12 @@
-package com.itqf.service;
+package com.itqf.service.impl;
 
 import com.itqf.mapper.RobotMapper;
 import com.itqf.pojo.Robot;
+import com.itqf.service.RobotService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Service
@@ -13,6 +15,11 @@ public class RobotServiceImpl implements RobotService {
     @Resource
     private RobotMapper robotMapper;
 
+
+    @Override
+    public List<Robot> findAl() {
+        return robotMapper.findAl();
+    }
 
     @Override
     public int deleteByPrimaryKey(Integer robotid) {

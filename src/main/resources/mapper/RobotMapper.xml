@@ -5,10 +5,17 @@
     <id column="robotid" jdbcType="INTEGER" property="robotid" />
     <result column="aiimg" jdbcType="VARCHAR" property="aiimg" />
     <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="electricity" jdbcType="INTEGER" property="electricity" />
+    <result column="hour" jdbcType="INTEGER" property="hour" />
   </resultMap>
   <sql id="Base_Column_List">
     robotid, aiimg, status
   </sql>
+
+  <select id="findAl" resultMap="BaseResultMap">
+    select *  from robot
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
