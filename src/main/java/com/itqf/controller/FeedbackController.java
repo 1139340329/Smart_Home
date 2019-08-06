@@ -19,6 +19,11 @@ public class FeedbackController {
     @Resource
     private FeedbackService feedbackService;
 
+    /**
+     * 提交反馈
+     * @param feedback
+     * @return
+     */
     @RequestMapping(method = RequestMethod.POST,value = "mine/feedback/submit")
     @ResponseBody
     public Map save(Feedback feedback){

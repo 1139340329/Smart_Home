@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itqf.mapper.AirMapper">
+  <resultMap id="BaseResultMap" type="com.itqf.pojo.Air">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="temperature" jdbcType="INTEGER" property="temperature" />
+    <result column="airscene" jdbcType="INTEGER" property="airscene" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="windspeed" jdbcType="VARCHAR" property="windspeed" />
+    <result column="electricity" jdbcType="INTEGER" property="electricity" />
+    <result column="hour" jdbcType="INTEGER" property="hour" />
+    <result column="roomid" jdbcType="INTEGER" property="roomid" />
+    <result column="airimg" jdbcType="VARCHAR" property="airimg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, temperature, airscene, status, windspeed, electricity, hour, roomid, airimg
+  </sql>
+
+  <select id="findAl" resultMap="BaseResultMap">
+    select * from air
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from air
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from air
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.itqf.pojo.Air">
+    insert into air (id, name, temperature, 
+      airscene, status, windspeed, 
+      electricity, hour, roomid, 
+      airimg)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{temperature,jdbcType=INTEGER}, 
+      #{airscene,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{windspeed,jdbcType=VARCHAR}, 
+      #{electricity,jdbcType=INTEGER}, #{hour,jdbcType=INTEGER}, #{roomid,jdbcType=INTEGER}, 
+      #{airimg,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.itqf.pojo.Air">
+    insert into air
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="temperature != null">
+        temperature,
+      </if>
+      <if test="airscene != null">
+        airscene,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="windspeed != null">
+        windspeed,
+      </if>
+      <if test="electricity != null">
+        electricity,
+      </if>
+      <if test="hour != null">
+        hour,
+      </if>
+      <if test="roomid != null">
+        roomid,
+      </if>
+      <if test="airimg != null">
+        airimg,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=INTEGER},
+      </if>
+      <if test="airscene != null">
+        #{airscene,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="windspeed != null">
+        #{windspeed,jdbcType=VARCHAR},
+      </if>
+      <if test="electricity != null">
+        #{electricity,jdbcType=INTEGER},
+      </if>
+      <if test="hour != null">
+        #{hour,jdbcType=INTEGER},
+      </if>
+      <if test="roomid != null">
+        #{roomid,jdbcType=INTEGER},
+      </if>
+      <if test="airimg != null">
+        #{airimg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.itqf.pojo.Air">
+    update air
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=INTEGER},
+      </if>
+      <if test="airscene != null">
+        airscene = #{airscene,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="windspeed != null">
+        windspeed = #{windspeed,jdbcType=VARCHAR},
+      </if>
+      <if test="electricity != null">
+        electricity = #{electricity,jdbcType=INTEGER},
+      </if>
+      <if test="hour != null">
+        hour = #{hour,jdbcType=INTEGER},
+      </if>
+      <if test="roomid != null">
+        roomid = #{roomid,jdbcType=INTEGER},
+      </if>
+      <if test="airimg != null">
+        airimg = #{airimg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.itqf.pojo.Air">
+    update air
+    set name = #{name,jdbcType=VARCHAR},
+      temperature = #{temperature,jdbcType=INTEGER},
+      airscene = #{airscene,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR},
+      windspeed = #{windspeed,jdbcType=VARCHAR},
+      electricity = #{electricity,jdbcType=INTEGER},
+      hour = #{hour,jdbcType=INTEGER},
+      roomid = #{roomid,jdbcType=INTEGER},
+      airimg = #{airimg,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

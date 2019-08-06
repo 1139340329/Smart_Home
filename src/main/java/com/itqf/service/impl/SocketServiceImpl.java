@@ -1,7 +1,8 @@
-package com.itqf.service;
+package com.itqf.service.impl;
 
 import com.itqf.mapper.SocketMapper;
 import com.itqf.pojo.Socket;
+import com.itqf.service.SocketService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
