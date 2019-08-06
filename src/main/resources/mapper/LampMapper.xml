@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itqf.mapper.LampMapper">
+  <resultMap id="BaseResultMap" type="com.itqf.pojo.Lamp">
+    <id column="lampid" jdbcType="INTEGER" property="lampid" />
+    <result column="lampimg" jdbcType="VARCHAR" property="lampimg" />
+    <result column="lamptype" jdbcType="VARCHAR" property="lamptype" />
+    <result column="lampstatus" jdbcType="VARCHAR" property="lampstatus" />
+    <result column="roomid" jdbcType="INTEGER" property="roomid" />
+    <result column="toroom" jdbcType="INTEGER" property="toroom" />
+    <result column="sid" jdbcType="INTEGER" property="sid" />
+    <association property="room" javaType="com.itqf.pojo.Room">
+      <id column="rid" jdbcType="INTEGER" property="rid" />
+      <result column="roomname" jdbcType="VARCHAR" property="roomname" />
+      <result column="light" jdbcType="INTEGER" property="light" />
+      <result column="temperature" jdbcType="INTEGER" property="temperature" />
+      <result column="humidity" jdbcType="INTEGER" property="humidity" />
+    </association>
+  </resultMap>
+  <select id="findallLamp" resultMap="BaseResultMap">
+   SELECT * from lamp l , room r where l.roomid=r.rid and l.toroom=0 and r.rid=#{roomid}
+  </select>
+  <sql id="Base_Column_List">
+    lampid, lampimg, lamptype, lampstatus, roomid, toroom, sid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from lamp
+    where lampid = #{lampid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from lamp
+    where lampid = #{lampid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.itqf.pojo.Lamp">
+    insert into lamp (lampid, lampimg, lamptype, 
+      lampstatus, roomid, toroom, 
+      sid)
+    values (#{lampid,jdbcType=INTEGER}, #{lampimg,jdbcType=VARCHAR}, #{lamptype,jdbcType=VARCHAR}, 
+      #{lampstatus,jdbcType=VARCHAR}, #{roomid,jdbcType=INTEGER}, #{toroom,jdbcType=INTEGER}, 
+      #{sid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.itqf.pojo.Lamp">
+    insert into lamp
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="lampid != null">
+        lampid,
+      </if>
+      <if test="lampimg != null">
+        lampimg,
+      </if>
+      <if test="lamptype != null">
+        lamptype,
+      </if>
+      <if test="lampstatus != null">
+        lampstatus,
+      </if>
+      <if test="roomid != null">
+        roomid,
+      </if>
+      <if test="toroom != null">
+        toroom,
+      </if>
+      <if test="sid != null">
+        sid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="lampid != null">
+        #{lampid,jdbcType=INTEGER},
+      </if>
+      <if test="lampimg != null">
+        #{lampimg,jdbcType=VARCHAR},
+      </if>
+      <if test="lamptype != null">
+        #{lamptype,jdbcType=VARCHAR},
+      </if>
+      <if test="lampstatus != null">
+        #{lampstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="roomid != null">
+        #{roomid,jdbcType=INTEGER},
+      </if>
+      <if test="toroom != null">
+        #{toroom,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null">
+        #{sid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.itqf.pojo.Lamp">
+    update lamp
+    <set>
+      <if test="lampimg != null">
+        lampimg = #{lampimg,jdbcType=VARCHAR},
+      </if>
+      <if test="lamptype != null">
+        lamptype = #{lamptype,jdbcType=VARCHAR},
+      </if>
+      <if test="lampstatus != null">
+        lampstatus = #{lampstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="roomid != null">
+        roomid = #{roomid,jdbcType=INTEGER},
+      </if>
+      <if test="toroom != null">
+        toroom = #{toroom,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null">
+        sid = #{sid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where lampid = #{lampid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.itqf.pojo.Lamp">
+    update lamp
+    set lampimg = #{lampimg,jdbcType=VARCHAR},
+      lamptype = #{lamptype,jdbcType=VARCHAR},
+      lampstatus = #{lampstatus,jdbcType=VARCHAR},
+      roomid = #{roomid,jdbcType=INTEGER},
+      toroom = #{toroom,jdbcType=INTEGER},
+      sid = #{sid,jdbcType=INTEGER}
+    where lampid = #{lampid,jdbcType=INTEGER}
+  </update>
+</mapper>

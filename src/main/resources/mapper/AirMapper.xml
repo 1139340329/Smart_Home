@@ -12,15 +12,28 @@
     <result column="hour" jdbcType="INTEGER" property="hour" />
     <result column="roomid" jdbcType="INTEGER" property="roomid" />
     <result column="airimg" jdbcType="VARCHAR" property="airimg" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, name, temperature, airscene, status, windspeed, electricity, hour, roomid, airimg
-  </sql>
+      <result column="sid" jdbcType="INTEGER" property="sid" />
+      <result column="toroom" jdbcType="INTEGER" property="toroom" />
+      <association property="room" javaType="com.itqf.pojo.Room">
+          <id column="rid" jdbcType="INTEGER" property="rid" />
+          <result column="roomname" jdbcType="VARCHAR" property="roomname" />
+          <result column="light" jdbcType="INTEGER" property="light" />
+          <result column="temperature" jdbcType="INTEGER" property="temperature" />
+          <result column="humidity" jdbcType="INTEGER" property="humidity" />
+      </association>
 
-  <select id="findAl" resultMap="BaseResultMap">
+  </resultMap>
+    <select id="findAl" resultMap="BaseResultMap">
     select * from air
   </select>
 
+  <select id="findallair" resultMap="BaseResultMap">
+    SELECT *  from air a, room r where a.roomid=r.rid and a.toroom=0 and r.rid=#{roomid}
+  </select>
+  <sql id="Base_Column_List">
+    id, name, temperature, airscene, status, windspeed, electricity, hour, roomid, airimg,
+    sid, toroom
+  </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -35,11 +48,13 @@
     insert into air (id, name, temperature, 
       airscene, status, windspeed, 
       electricity, hour, roomid, 
-      airimg)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{temperature,jdbcType=INTEGER}, 
-      #{airscene,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{windspeed,jdbcType=VARCHAR}, 
-      #{electricity,jdbcType=INTEGER}, #{hour,jdbcType=INTEGER}, #{roomid,jdbcType=INTEGER}, 
-      #{airimg,jdbcType=VARCHAR})
+      airimg, sid, toroom
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{temperature,jdbcType=INTEGER},
+      #{airscene,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{windspeed,jdbcType=VARCHAR},
+      #{electricity,jdbcType=INTEGER}, #{hour,jdbcType=INTEGER}, #{roomid,jdbcType=INTEGER},
+      #{airimg,jdbcType=VARCHAR}, #{sid,jdbcType=INTEGER}, #{toroom,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.itqf.pojo.Air">
     insert into air
@@ -74,6 +89,12 @@
       <if test="airimg != null">
         airimg,
       </if>
+      <if test="sid != null">
+        sid,
+      </if>
+      <if test="toroom != null">
+        toroom,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -105,6 +126,12 @@
       </if>
       <if test="airimg != null">
         #{airimg,jdbcType=VARCHAR},
+      </if>
+      <if test="sid != null">
+        #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="toroom != null">
+        #{toroom,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -138,6 +165,12 @@
       <if test="airimg != null">
         airimg = #{airimg,jdbcType=VARCHAR},
       </if>
+      <if test="sid != null">
+        sid = #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="toroom != null">
+        toroom = #{toroom,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -151,7 +184,9 @@
       electricity = #{electricity,jdbcType=INTEGER},
       hour = #{hour,jdbcType=INTEGER},
       roomid = #{roomid,jdbcType=INTEGER},
-      airimg = #{airimg,jdbcType=VARCHAR}
+      airimg = #{airimg,jdbcType=VARCHAR},
+      sid = #{sid,jdbcType=INTEGER},
+      toroom = #{toroom,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

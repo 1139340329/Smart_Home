@@ -21,12 +21,25 @@ public class Air {
 
     private String airimg;
 
+    private Integer sid;
+
+    private Integer toroom;
+    private Room room;
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public String getName() {
@@ -99,5 +112,21 @@ public class Air {
 
     public void setAirimg(String airimg) {
         this.airimg = airimg == null ? null : airimg.trim();
+    }
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
+    }
+
+    public Integer getToroom() {
+        return toroom;
+    }
+
+    public void setToroom(Integer toroom) {
+        this.toroom = toroom;
     }
 }
