@@ -6,67 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6f60cca-3152-417e-a534-65bd9612ed7b" name="Default Changelist" comment="马金祥第一次提交">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/controller/AirController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/controller/FeedbackController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/controller/LampController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/controller/MyController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/controller/Pm25Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/controller/RobotController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/controller/SceneController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/controller/SocketController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/controller/TableController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/mapper/AirMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/mapper/FeedbackMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/mapper/LampMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/mapper/Pm25Mapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/mapper/RobotMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/mapper/RoomMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/mapper/SceneMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/mapper/SocketMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/mapper/TablelampMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/pojo/Air.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/pojo/Feedback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/pojo/Lamp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/pojo/Pm25.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/pojo/Robot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/pojo/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/pojo/Scene.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/pojo/Socket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/pojo/Tablelamp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/AirService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/FeedbackService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/LampMapperService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/Pm25Service.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/RobotService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/SceneService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/SocketService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/TablelampService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/impl/AirServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/impl/FeedbackServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/impl/LampMapperServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/impl/Pm25ServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/impl/RobotServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/impl/SceneServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/impl/SocketServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/service/impl/TablelampServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itqf/util/DataView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AirMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/FeedbackMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/LampMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/Pm25Mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/RobotMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/RoomMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SceneMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SocketMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/tablelampMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springmvc.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="e6f60cca-3152-417e-a534-65bd9612ed7b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -131,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/itqf/controller/AirController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1692">
-              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+            <state relative-caret-position="288">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -595,7 +535,7 @@
       <workItem from="1565067496155" duration="5759000" />
       <workItem from="1565095434481" duration="643000" />
       <workItem from="1565101758722" duration="6069000" />
-      <workItem from="1565220984705" duration="10976000" />
+      <workItem from="1565220984705" duration="11314000" />
     </task>
     <task id="LOCAL-00001" summary="马金祥第一次提交">
       <created>1565233086496</created>
@@ -604,16 +544,24 @@
       <option name="project" value="LOCAL" />
       <updated>1565233086496</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="马金祥第一次提交">
+      <created>1565233734841</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1565233734841</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55674000" />
+    <option name="totallyTimeSpent" value="56012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49913344" visible="true" weight="0.25984848" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49913344" visible="true" weight="0.25984848" />
       <window_info id="Structure" order="1" sideWeight="0.50086653" side_tool="true" weight="0.25757575" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -636,7 +584,7 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49924242" weight="0.3294893" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.55189455" />
-      <window_info anchor="bottom" id="Messages" order="15" visible="true" weight="0.3509061" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.3509061" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1200,8 +1148,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/itqf/controller/AirController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1692">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        <state relative-caret-position="288">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
