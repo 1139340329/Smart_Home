@@ -1,14 +1,15 @@
 package com.itqf.mapper;
 
-
 import com.itqf.pojo.Robot;
 
 import java.util.List;
 
 public interface RobotMapper {
-
+    List<Robot>findallrobot(int roomid);
     List<Robot> findAl();
-
+    /**
+     * 添加生活电器*/
+    int addlife(int robotid);
     int deleteByPrimaryKey(Integer robotid);
 
     int insert(Robot record);

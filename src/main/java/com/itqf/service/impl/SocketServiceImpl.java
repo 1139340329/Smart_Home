@@ -6,6 +6,7 @@ import com.itqf.service.SocketService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Service
@@ -15,6 +16,17 @@ public class SocketServiceImpl implements SocketService {
     @Resource
     private SocketMapper socketMapper;
 
+    @Override
+    public int addsocket(int socketid) {
+        return socketMapper.addsocket(socketid);
+    }
+
+    /**
+ * 全查开关*/
+    @Override
+    public List<Socket> findsocket(int roomid) {
+        return socketMapper.findsocket(roomid);
+    }
 
     @Override
     public int deleteByPrimaryKey(Integer socketid) {

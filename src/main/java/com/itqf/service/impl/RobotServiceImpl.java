@@ -15,6 +15,15 @@ public class RobotServiceImpl implements RobotService {
     @Resource
     private RobotMapper robotMapper;
 
+    @Override
+    public int addlife(int robotid) {
+        return robotMapper.addlife(robotid);
+    }
+
+    @Override
+    public List<Robot> findallrobot(int roomid) {
+        return robotMapper.findallrobot(roomid);
+    }
 
     @Override
     public List<Robot> findAl() {

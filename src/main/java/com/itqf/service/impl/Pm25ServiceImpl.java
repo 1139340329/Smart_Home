@@ -14,7 +14,17 @@ public class Pm25ServiceImpl implements Pm25Service {
 
     @Resource
     private Pm25Mapper pm25Mapper;
+/**
+ * 添加pm25*/
+    @Override
+    public int addpm25(int pmid) {
+       return pm25Mapper.addpm25(pmid);
+    }
 
+    @Override
+    public List<Pm25> findallPm25(int roomid) {
+        return pm25Mapper.findallPm25(roomid);
+    }
 
     @Override
     public List<Pm25> findAl() {

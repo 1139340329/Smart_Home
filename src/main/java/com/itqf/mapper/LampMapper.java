@@ -7,6 +7,9 @@ import java.util.List;
 public interface LampMapper {
     //全查lamp
     List<Lamp> findallLamp(int roomid);
+    /**
+     * 添加照明*/
+    int addlamp(int lampid);
     int deleteByPrimaryKey(Integer lampid);
 
     int insert(Lamp record);

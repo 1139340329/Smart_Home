@@ -5,6 +5,10 @@ import com.itqf.pojo.Air;
 import java.util.List;
 
 public interface AirService {
+    //添加空调（修改状态）
+    int addair(int id);
+    //添加页面全查
+    List<Air> findallair(int roomid);
     List<Air> findAl();
 
     int deleteByPrimaryKey(Integer id);

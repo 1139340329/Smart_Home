@@ -11,6 +11,9 @@
   <sql id="Base_Column_List">
     sceneid, scenename, status, imgurl, ifon
   </sql>
+  <select id="findallscene" resultMap="BaseResultMap">
+    SELECT *  from scene where ifon='true'
+  </select>
   <select id="findByIfon" resultMap="BaseResultMap">
     select * from scene where ifon='false'
   </select>
@@ -94,4 +97,5 @@
       ifon = #{ifon,jdbcType=VARCHAR}
     where sceneid = #{sceneid,jdbcType=INTEGER}
   </update>
+
 </mapper>

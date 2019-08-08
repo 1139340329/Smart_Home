@@ -23,5 +23,22 @@ public class LampController {
         map.put("data",lamps);
         return map;
     }
+/**
+ *  * 添加照明
+ *  *
+ * */
+    @RequestMapping(method = RequestMethod.GET, value = "/firstpage/equipment/lamp/add")
+   public Map addlamp(int lampid){
+        Lamp lamp = lampMapperService.selectByPrimaryKey(lampid);
+        Map map=new HashMap();
+        if(lamp.getToroom()==0){
+            int i = lampMapperService.addlamp(lampid);
+            map.put("msg","成功");
+            return map;
+        }else {
+            map.put("msg","当前不能添加该设备");
+            return map;
+        }
 
+    }
 }

@@ -8,6 +8,8 @@ public interface AirMapper {
     List<Air> findallair(int roomid);
 
     List<Air> findAl();
+    //添加空调（修改状态）
+    int addair(int id);
 
     int deleteByPrimaryKey(Integer id);
 

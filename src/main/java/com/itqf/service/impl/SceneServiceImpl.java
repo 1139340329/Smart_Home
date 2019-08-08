@@ -4,6 +4,9 @@ import com.itqf.mapper.SceneMapper;
 import com.itqf.pojo.Scene;
 import com.itqf.service.SceneService;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
@@ -17,6 +20,8 @@ public class SceneServiceImpl implements SceneService {
     @Resource
     private SceneMapper sceneMapper;
     @Override
+    public List<Scene> findallscene() {
+        return sceneMapper.findallscene();
     public List<Scene> findByIfon() {
         return sceneMapper.findByIfon();
     }
@@ -46,7 +51,6 @@ public class SceneServiceImpl implements SceneService {
     public int updateByPrimaryKeySelective(Scene record) {
         record.setIfon("true");
         return sceneMapper.updateByPrimaryKeySelective(record);
-    }
 
     @Override
     public int updateByPrimaryKey(Scene record) {

@@ -1,6 +1,11 @@
 package com.itqf.controller;
 
 import com.itqf.pojo.Scene;
+import com.itqf.pojo.Socket;
+import com.itqf.service.SceneService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import com.itqf.service.SceneService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +17,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@RestController
+public class SceneController {
+    @Resource
+    private SceneService sceneService;
+    /**
+     * 场景全查*/
+    @RequestMapping(method = RequestMethod.GET, value = "/smarthome/show")
+
+    public Map findscene(){
+        List<Scene> sceneList = sceneService.findallscene();
+        Map map=  new HashMap();
+        map.put("data",sceneList);
+        return map;
+    }
 /**
  * 爱明天，更爱大佬
  */

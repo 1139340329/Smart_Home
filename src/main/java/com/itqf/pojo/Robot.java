@@ -5,12 +5,17 @@ public class Robot {
 
     private String aiimg;
 
+    private String rtype;
+
     private String status;
 
+    private Integer roomid;
+
+    private Integer toroom;
+
+    private Integer sid;
     private Integer electricity;
-
-    private Integer hour;
-
+    private  Room room;
     public Integer getElectricity() {
         return electricity;
     }
@@ -18,16 +23,6 @@ public class Robot {
     public void setElectricity(Integer electricity) {
         this.electricity = electricity;
     }
-
-    public Integer getHour() {
-        return hour;
-    }
-
-    public void setHour(Integer hour) {
-        this.hour = hour;
-    }
-
-
 
     public Integer getRobotid() {
         return robotid;
@@ -45,11 +40,43 @@ public class Robot {
         this.aiimg = aiimg == null ? null : aiimg.trim();
     }
 
+    public String getRtype() {
+        return rtype;
+    }
+
+    public void setRtype(String rtype) {
+        this.rtype = rtype == null ? null : rtype.trim();
+    }
+
     public String getStatus() {
         return status;
     }
 
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
+    }
+
+    public Integer getRoomid() {
+        return roomid;
+    }
+
+    public void setRoomid(Integer roomid) {
+        this.roomid = roomid;
+    }
+
+    public Integer getToroom() {
+        return toroom;
+    }
+
+    public void setToroom(Integer toroom) {
+        this.toroom = toroom;
+    }
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
     }
 }

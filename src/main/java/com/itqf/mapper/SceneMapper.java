@@ -5,6 +5,9 @@ import com.itqf.pojo.Scene;
 import java.util.List;
 
 public interface SceneMapper {
+    /**
+     * 场景展示*/
+    List<Scene>  findallscene();
 
 
     List<Scene> findByIfon();

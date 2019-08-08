@@ -17,7 +17,15 @@ public class AirServiceImpl implements AirService {
 
     @Resource
     private AirMapper airMapper;
+    @Override
+    public int addair(int id) {
+        return airMapper.addair(id);
+    }
 
+    @Override
+    public List<Air> findallair(int roomid) {
+        return airMapper.findallair(roomid);
+    }
 
     @Override
     public List<Air> findAl() {
@@ -42,7 +50,7 @@ public class AirServiceImpl implements AirService {
 
     @Override
     public Air selectByPrimaryKey(Integer id) {
-        return null;
+        return airMapper.selectByPrimaryKey(id);
     }
 
     @Override

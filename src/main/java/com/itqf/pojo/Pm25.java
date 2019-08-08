@@ -33,6 +33,21 @@ public class Pm25 {
 
     private Integer hour;
 
+    private Integer roomid;
+
+    private Integer toroom;
+
+    private Integer sid;
+    private Room room;
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
     public Integer getPmid() {
         return pmid;
     }
@@ -159,5 +174,29 @@ public class Pm25 {
 
     public void setHour(Integer hour) {
         this.hour = hour;
+    }
+
+    public Integer getRoomid() {
+        return roomid;
+    }
+
+    public void setRoomid(Integer roomid) {
+        this.roomid = roomid;
+    }
+
+    public Integer getToroom() {
+        return toroom;
+    }
+
+    public void setToroom(Integer toroom) {
+        this.toroom = toroom;
+    }
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
     }
 }
