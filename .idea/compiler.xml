@@ -9,5 +9,8 @@
         <module name="Smart_Home" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Smart_Home" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
