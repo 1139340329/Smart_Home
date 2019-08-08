@@ -38,7 +38,7 @@ public class MyController {
      * 展示我的习惯里的总电量
      * @return
      */
-    @RequestMapping(method = RequestMethod.GET,value = "/mine/show")
+    @RequestMapping(method = RequestMethod.GET,value ="/mine/show")
     @ResponseBody
     public Map show(){
         List<Tablelamp> tablelamps = tablelampMapper.findall();
@@ -65,7 +65,52 @@ public class MyController {
         electricity=electricity1+electricity2+electricity3+electricity4;
 
         Map<String,Integer> map = new HashMap<>();
+        Map map1=new HashMap();
         map.put("electricity",electricity);
-        return map;
+        map1.put("data",map);
+        return map1;
+    }
+
+    /**
+     * 展示我的习惯的各个电器的电量
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.GET,value = "/mine/habit/show")
+    @ResponseBody
+    public Map myhabit(){
+        Map map=new HashMap();
+        List<Air> airs = airService.findAl();
+        int electricity1=0;
+        int hour=0;
+        for (Air air : airs) {
+            electricity1=air.getElectricity()+electricity1;
+            hour=air.getHour()+hour;
+        }
+        List<Tablelamp> tablelamps = tablelampMapper.findall();
+        int electricity2=0;
+        for (Tablelamp tablelamp : tablelamps) {
+            electricity2=tablelamp.getElectricity()+electricity2;
+            hour=tablelamp.getHour()+hour;
+        }
+        List<Pm25> pm25s = pm25Service.findAl();
+        int electricity3=0;
+        for (Pm25 pm25 : pm25s) {
+            electricity3=pm25.getElectricity()+electricity3;
+            hour=pm25.getHour()+hour;
+        }
+        List<Robot> robots = robotService.findAl();
+        int electricity4=0;
+        for (Robot robot : robots) {
+            electricity4=robot.getElectricity()+electricity4;
+            hour=robot.getHour()+hour;
+        }
+        map.put("hours",hour);
+        map.put("air",electricity1);
+        map.put("lamp",electricity2);
+        map.put("pm25",electricity3);
+        map.put("robot",electricity4);
+        Map map1=new HashMap();
+        map1.put("data",map);
+        return map1;
     }
 }
