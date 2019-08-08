@@ -31,14 +31,6 @@ public class SceneController {
         map.put("data",sceneList);
         return map;
     }
-/**
- * 爱明天，更爱大佬
- */
-@Controller
-public class SceneController {
-
-    @Resource
-    private SceneService sceneService;
 
     @RequestMapping(method = RequestMethod.GET,value = "/smarthome/scene/findall")
     @ResponseBody
