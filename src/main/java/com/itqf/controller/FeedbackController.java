@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.xml.crypto.Data;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,16 +29,19 @@ public class FeedbackController {
     @ResponseBody
     public Map save(Feedback feedback){
         int i = feedbackService.insertSelective(feedback);
-       Map map = new HashMap();
+       Map m = new HashMap();
+       Map map=new HashMap();
         try {
             if (i>0){
-                map.put("msg","成功");
+                m.put("msg","成功");
+                map.put("data",m);
                 return map;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        map.put("msg","失败");
+        m.put("msg","失败");
+        map.put("data",m);
         return  map;
     }
 
